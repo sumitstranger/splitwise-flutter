@@ -20,7 +20,7 @@ class NotificationService {
         onDidReceiveLocalNotification: onDidReceiveLocalNotification);
 
     var initializationSettings = InitializationSettings(
-        initializationSettingsAndroid, initializationSettingsIOS);
+      android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
 
     flutterLocalNotificationsPlugin.initialize(initializationSettings,
         onSelectNotification: onSelectNotification);
@@ -40,12 +40,13 @@ class NotificationService {
   getPlatformChannelSpecfics() {
     var androidPlatformChannelSpecifics = AndroidNotificationDetails(
         'your channel id', 'your channel name', 'your channel description',
-        importance: Importance.Max,
-        priority: Priority.High,
+        importance: Importance.max,
+        priority: Priority.high,
         ticker: 'Medicine Reminder');
     var iOSPlatformChannelSpecifics = IOSNotificationDetails();
     var platformChannelSpecifics = NotificationDetails(
-        androidPlatformChannelSpecifics, iOSPlatformChannelSpecifics);
+        android: androidPlatformChannelSpecifics,
+        iOS: iOSPlatformChannelSpecifics);
 
     return platformChannelSpecifics;
   }

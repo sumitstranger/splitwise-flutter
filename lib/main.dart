@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moneymanager/locator.dart';
-import 'package:moneymanager/ui/router.dart';
+import 'package:moneymanager/ui/router.dart' as mmui;
 import 'package:moneymanager/ui/shared/app_colors.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.blue,
       ),
       initialRoute: '/',
-      onGenerateRoute: Router.generateRoute,
+      onGenerateRoute: mmui.Router.generateRoute,
     );
   }
 }
